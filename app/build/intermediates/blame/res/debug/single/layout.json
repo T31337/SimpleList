@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/layout/add.xml",
+        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/layout/add.xml"
+    },
+    {
+        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/layout/activity_list.xml",
+        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/layout/activity_list.xml"
+    }
+]
