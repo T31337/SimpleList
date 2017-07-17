@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -156,6 +157,7 @@ public class List extends ListActivity
                     }
 
                 }
+                res.close();
                 saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
                 setListAdapter(saa);
             }
@@ -169,8 +171,8 @@ public class List extends ListActivity
     {
         //Write To File?
         Log.println(Log.DEBUG, TAG, "Write To File");
-        Cursor res = db.rawQuery(query, null);
-        res.moveToFirst();
+        //Cursor res = db.rawQuery(query, null);
+        //res.moveToFirst();
         String sql = "delete from Items;";
         db.execSQL(sql);
         for(int i=0;i < items.size();i++)

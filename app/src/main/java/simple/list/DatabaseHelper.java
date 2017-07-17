@@ -15,7 +15,7 @@ import static simple.list.List.tableName;
 class  DatabaseHelper extends SQLiteOpenHelper
 {
 
-    public DatabaseHelper(Context context)
+    DatabaseHelper(Context context)
     {
         super(context,DataBase_Name,null,1);
     }
