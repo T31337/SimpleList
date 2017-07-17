@@ -26,13 +26,13 @@ import java.util.ArrayList;
 public class List extends ListActivity
 {
     private static final String TAG = "myDebug";
-    public static String tableName="Items";
-    public static String query = String.format("select * from %s;",tableName);
+    public static String tableName="Items",itemKey="Item",DataBase_Name="Items";
+    public static String query = String.format("select %s from %s;",itemKey,tableName);
     private ListView lv; //DO NOT MAKE STATIC, CAUSES MEMORY LEAK!
     public static ArrayAdapter<Item> saa;
     DatabaseHelper helper;
     SQLiteDatabase db;
-    private static ArrayList<Item> items = new ArrayList<Item>();
+    public static ArrayList<Item> items = new ArrayList<Item>();
     ContentValues cv = new ContentValues();
     AdapterView.OnItemClickListener modelListener = new AdapterView.OnItemClickListener()
     {
@@ -62,7 +62,7 @@ public class List extends ListActivity
         setContentView(R.layout.activity_list);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         helper = new DatabaseHelper(List.this.getApplicationContext());
-        db = helper.getWritableDatabase();
+        db = helper.getReadableDatabase();
         lv = getListView();
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
@@ -276,7 +276,7 @@ public class List extends ListActivity
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null)
         {
-            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.SHOW_FORCED);
         }
 
     }
@@ -285,7 +285,7 @@ public class List extends ListActivity
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null)
         {
-            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED,InputMethodManager.HIDE_IMPLICIT_ONLY);
+            inputMethodManager.toggleSoftInput(InputMethodManager.RESULT_HIDDEN,InputMethodManager.HIDE_IMPLICIT_ONLY);
         }
     }
 
@@ -300,12 +300,14 @@ public class List extends ListActivity
                 .setTitle("Add Item!")
                 .setView(addView)
                 .setPositiveButton("Add Item!",
-                        new DialogInterface.OnClickListener()  {
+                        new DialogInterface.OnClickListener()
+                        {
 
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton)
                             {
                                 EditText txtItem = (EditText) addView.findViewById(R.id.txtNewItem);
+                                showKeyboard();
                                 String sItem = txtItem.getText().toString().trim();
                                 Log.println(Log.DEBUG, TAG, "sItem='"+sItem+"'");
                                 //Add Item To List
@@ -318,8 +320,8 @@ public class List extends ListActivity
                                     items.add(new Item(sItem));
                                     saa = new ArrayAdapter<Item>(List.this,android.R.layout.simple_list_item_multiple_choice,items);
                                     setListAdapter(saa);
+                                    hideKeyboard();
                                 }
-                                hideKeyboard();
                             }
                         })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
