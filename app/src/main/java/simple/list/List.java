@@ -1,5 +1,6 @@
 package simple.list;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentValues;
@@ -33,7 +34,7 @@ public class List extends ListActivity
     public static ArrayAdapter<Item> saa;
     DatabaseHelper helper;
     SQLiteDatabase db;
-    public static ArrayList<Item> items = new ArrayList<Item>();
+    public static ArrayList<Item> items = new ArrayList<>();
     ContentValues cv = new ContentValues();
     AdapterView.OnItemClickListener modelListener = new AdapterView.OnItemClickListener()
     {
@@ -295,6 +296,7 @@ public class List extends ListActivity
     {
         showKeyboard();
         LayoutInflater inflater = LayoutInflater.from(getBaseContext());
+        @SuppressLint("InflateParams")
         final View addView = inflater.inflate(R.layout.add, null);
         showKeyboard();
         addView.setRotation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -308,19 +310,19 @@ public class List extends ListActivity
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton)
                             {
-                                EditText txtItem = (EditText) addView.findViewById(R.id.txtNewItem);
+                                EditText txtItem = addView.findViewById(R.id.txtNewItem);
                                 showKeyboard();
                                 String sItem = txtItem.getText().toString().trim();
                                 Log.println(Log.DEBUG, TAG, "sItem='"+sItem+"'");
                                 //Add Item To List
-                                if(sItem == null||sItem.isEmpty())
+                                if(sItem.isEmpty())
                                 {
                                     Toast.makeText(getApplicationContext(), "Add Nothing To List?", Toast.LENGTH_LONG).show();
                                 }
                                 else
                                 {
                                     items.add(new Item(sItem));
-                                    saa = new ArrayAdapter<Item>(List.this,android.R.layout.simple_list_item_multiple_choice,items);
+                                    saa = new ArrayAdapter<>(List.this, android.R.layout.simple_list_item_multiple_choice, items);
                                     setListAdapter(saa);
                                     hideKeyboard();
                                 }
