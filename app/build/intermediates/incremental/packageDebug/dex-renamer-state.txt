@@ -1,7 +1,7 @@
-#Mon Jul 17 11:31:20 CDT 2017
-base.0=/home/t3/Dev/Android/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a109c05ca3e153994976a5edc05f93ec8cd70143
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/home/t3/Dev/Android/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7e5b281ae5b6cb5480e6fc2d8b45ff27882b715e/classes.dex
-base.1=/home/t3/Dev/Android/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7e5b281ae5b6cb5480e6fc2d8b45ff27882b715e
-file.0=/home/t3/Dev/Android/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a109c05ca3e153994976a5edc05f93ec8cd70143/classes.dex
+#Sun Jul 30 02:37:34 CDT 2017
+base.0=C\:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_c26cc5f3947cf6ee5b1e25f83c88187095699b43
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fc790c8ef62af45d17f7bb5bf2e3520a90eaff16\\classes.dex
+base.1=C\:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fc790c8ef62af45d17f7bb5bf2e3520a90eaff16
+file.0=C\:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_c26cc5f3947cf6ee5b1e25f83c88187095699b43\\classes.dex

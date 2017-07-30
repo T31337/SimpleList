@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/menu/menu.xml",
-        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/menu/menu.xml"
+        "merged": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu.xml",
+        "source": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\menu\\menu.xml"
+    },
+    {
+        "merged": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu.xml",
+        "source": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\menu\\menu.xml"
     }
 ]

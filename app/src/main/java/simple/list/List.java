@@ -36,6 +36,7 @@ public class List extends ListActivity
     SQLiteDatabase db;
     public static ArrayList<Item> items = new ArrayList<>();
     ContentValues cv = new ContentValues();
+
     AdapterView.OnItemClickListener modelListener = new AdapterView.OnItemClickListener()
     {
         @Override
@@ -67,8 +68,7 @@ public class List extends ListActivity
         db = helper.getReadableDatabase();
         lv = getListView();
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
-        setListAdapter(saa);
+        updateListAdapter();
         lv.setOnItemClickListener(modelListener);
         LoadList();
 
@@ -112,15 +112,6 @@ public class List extends ListActivity
         }
     }
 
-    public void Refresh()
-    {
-        setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items));
-        lv = getListView();
-        lv.setItemsCanFocus(false);
-        lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        String sSize = ""+items.size();
-        Log.println(Log.INFO,TAG, "size: "+sSize);
-    }
     //List Functions
     private void LoadList()
     {
@@ -156,11 +147,9 @@ public class List extends ListActivity
                     {
                         Log.println(Log.ERROR,TAG,e.toString());
                     }
-
                 }
                 res.close();
-                saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
-                setListAdapter(saa);
+                updateListAdapter();
             }
         }
         catch(Error e)
@@ -172,8 +161,6 @@ public class List extends ListActivity
     {
         //Write To File?
         Log.println(Log.DEBUG, TAG, "Write To File");
-        //Cursor res = db.rawQuery(query, null);
-        //res.moveToFirst();
         String sql = "delete from Items;";
         db.execSQL(sql);
         for(int i=0;i < items.size();i++)
@@ -223,15 +210,16 @@ public class List extends ListActivity
         if(nItem == 4)
         {
             //Remove All From List
-            saa.clear();
-            setListAdapter(saa);
+            items.clear();
+            updateListAdapter();
             return true;
         }
         if(nItem == 5)
         {
             //UnCheck All CheckBoxes
-            int size = saa.getCount();
-            for(int i=0; i<= size;i++)
+
+            int size =saa.getCount();
+            for(int i=0; i < size;i++)
             {
                 lv.setItemChecked(i, false);
             }
@@ -240,13 +228,19 @@ public class List extends ListActivity
         if(nItem == 6)
         {
             //remove checked
+
+            //TODO: Fix This...
             int size = saa.getCount();
-            //int size = items.size();
+            Log.println(Log.DEBUG,TAG,"Size: "+size);
+            //This Loop Fails To Remove Some Checked Items, Something About Index Out Of Bounds?
             for(int i=0;i < size;i++)
             {
+                Log.println(Log.DEBUG,TAG,"i="+i);
                 try
                 {
-                    boolean checked = items.get(i).isChecked;
+                    //boolean checked = items.get(i).isChecked;
+                    boolean checked = lv.isItemChecked(i);
+                    Log.println(Log.DEBUG,TAG,items.get(i).name+" | Checked: "+checked);
                     if (checked)
                     {
                         items.remove(i);
@@ -254,15 +248,37 @@ public class List extends ListActivity
                 }
                 catch (Exception e)
                 {
-                    Log.println(Log.DEBUG,TAG,e.toString());
+                    Log.println(Log.DEBUG,TAG,e.getMessage());
                 }
             }
-            saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
-            setListAdapter(saa);
+            updateListAdapter();
             return true;
         }
         return false;
     }
+
+    private void updateListAdapter()
+    {
+        //Reset Adapter
+        saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
+        setListAdapter(saa);
+        //Check The Items Should Have A Check Mark Already...
+        for(int i =0;i<saa.getCount();i++)
+        {
+            try
+            {
+                if (items.get(i).isChecked)
+                {
+                    lv.setItemChecked(i, true);
+                }
+            }
+            catch(Exception e)
+            {
+                Log.println(Log.ERROR,TAG,"Error: "+e.getMessage());
+            }
+        }
+    }
+
     private void populateMenu(Menu menu)
     {
         menu.add(Menu.NONE, 3, Menu.NONE, "Add Item");
@@ -281,14 +297,15 @@ public class List extends ListActivity
         {
             inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.SHOW_FORCED);
         }
-
     }
+
+    //ToDo: Fix This Method...
     private void hideKeyboard()
     {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null)
         {
-            inputMethodManager.toggleSoftInput(InputMethodManager.RESULT_HIDDEN,InputMethodManager.HIDE_IMPLICIT_ONLY);
+            inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,InputMethodManager.RESULT_HIDDEN);
         }
     }
 
@@ -322,8 +339,7 @@ public class List extends ListActivity
                                 else
                                 {
                                     items.add(new Item(sItem));
-                                    saa = new ArrayAdapter<>(List.this, android.R.layout.simple_list_item_multiple_choice, items);
-                                    setListAdapter(saa);
+                                    updateListAdapter();
                                     hideKeyboard();
                                 }
                             }
@@ -337,9 +353,6 @@ public class List extends ListActivity
                         hideKeyboard();
                     }
                 }).show();
-
-
-
         addView.setRotation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 }
