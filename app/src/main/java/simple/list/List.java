@@ -218,7 +218,7 @@ public class List extends ListActivity
         {
             //UnCheck All CheckBoxes
 
-            int size =saa.getCount();
+            int size = items.size();
             for(int i=0; i < size;i++)
             {
                 lv.setItemChecked(i, false);
@@ -228,27 +228,16 @@ public class List extends ListActivity
         if(nItem == 6)
         {
             //remove checked
-
-            //TODO: Fix This...
-            int size = saa.getCount();
-            Log.println(Log.DEBUG,TAG,"Size: "+size);
-            //This Loop Fails To Remove Some Checked Items, Something About Index Out Of Bounds?
-            for(int i=0;i < size;i++)
+            for (int i = 0 , itemsSize=items.size() ;  i < itemsSize; i++)
             {
-                Log.println(Log.DEBUG,TAG,"i="+i);
-                try
+                Item it = items.get(i);
+                Log.println(Log.INFO, "myDebug", String.format("Size: %s", itemsSize));
+
+                if (it.isChecked)
                 {
-                    //boolean checked = items.get(i).isChecked;
-                    boolean checked = lv.isItemChecked(i);
-                    Log.println(Log.DEBUG,TAG,items.get(i).name+" | Checked: "+checked);
-                    if (checked)
-                    {
-                        items.remove(i);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Log.println(Log.DEBUG,TAG,e.getMessage());
+                    Log.println(Log.INFO, TAG, String.format("%s | Checked: %s ", it.name, it.isChecked));
+                    items.remove(i);
+                    itemsSize-=1;
                 }
             }
             updateListAdapter();
@@ -263,7 +252,7 @@ public class List extends ListActivity
         saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
         setListAdapter(saa);
         //Check The Items Should Have A Check Mark Already...
-        for(int i =0;i<saa.getCount();i++)
+        for(int i =0;i<items.size();i++)
         {
             try
             {
@@ -305,7 +294,8 @@ public class List extends ListActivity
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null)
         {
-            inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,InputMethodManager.RESULT_HIDDEN);
+            //inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,InputMethodManager.RESULT_HIDDEN);
+            inputMethodManager.hideSoftInputFromWindow(getListView().getWindowToken(),InputMethodManager.HIDE_IMPLICIT_ONLY);
         }
     }
 

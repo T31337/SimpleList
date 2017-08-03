@@ -1,0 +1,4 @@
+#Wed Aug 02 10:20:55 CDT 2017
+base.0=/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8
+renamed.0=classes.dex
+file.0=/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex

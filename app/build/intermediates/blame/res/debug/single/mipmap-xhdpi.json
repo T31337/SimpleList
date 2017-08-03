@@ -1,18 +1,34 @@
 [
     {
-        "merged": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
-        "source": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "/home/t3/Dev/SimpleList/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/t3/Dev/SimpleList/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
-        "source": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
+        "source": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/t3/Dev/SimpleList/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/home/t3/Dev/SimpleList/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     }
 ]

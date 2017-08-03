@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\Trenton\\.android\\build-cache\\181aa824b6675a55949535a03805e544d65cedf9\\output\\res\\values\\values.xml",
+                    "file": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\.android\\build-cache\\181aa824b6675a55949535a03805e544d65cedf9\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/home/t3/Dev/SimpleList/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,55 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\home\\t3\\.android\\build-cache\\d4f4eb6f9215d9ccd4a28bf92f10bb51adc6cf47\\output\\res\\values\\values.xml",
+                    "file": "/home/t3/.android/build-cache/3923887deeb57b4e6518976c6c8ae7f8d4753592/output/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/home/t3/Dev/SimpleList/C:\\home\\t3\\.android\\build-cache\\d4f4eb6f9215d9ccd4a28bf92f10bb51adc6cf47\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/home/t3/.android/build-cache/3923887deeb57b4e6518976c6c8ae7f8d4753592/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

@@ -1,53 +1,55 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:2:1-21:12
+ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:2:1-22:12
 	package
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:3:5-26
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:3:5-26
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
+	android:installLocation
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:4:5-45
 application
-ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:5:5-19:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Trenton\.android\build-cache\c442ca906a4d8cd57c8eb9e3727532a99a669d0d\output\AndroidManifest.xml:9:5-20
+ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:6:5-20:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/t3/.android/build-cache/69ae7196ceca0686225eef96ad8d8f0889ed4a2a/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:9:9-41
 	android:supportsRtl
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:11:9-35
 	android:roundIcon
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:10:9-54
 	android:allowBackup
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:7:9-35
 	android:icon
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:8:9-43
 	android:theme
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:12:9-40
 activity#simple.list.List
-ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:12:19-39
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:13:19-39
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml:17:27-74
 uses-sdk
-INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Trenton\.android\build-cache\c442ca906a4d8cd57c8eb9e3727532a99a669d0d\output\AndroidManifest.xml:5:5-7:41
+INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/t3/.android/build-cache/69ae7196ceca0686225eef96ad8d8f0889ed4a2a/output/AndroidManifest.xml:5:5-7:41
 	android:targetSdkVersion
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Trenton\Dev\Android\SimpleList\app\src\main\AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml
+		INJECTED from /home/t3/Dev/Android/SimpleList/app/src/main/AndroidManifest.xml

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/opt/android-sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_acc73e4ee5a95a149a64c98ae3a02c1a889b532c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/t3/.android/build-cache/69ae7196ceca0686225eef96ad8d8f0889ed4a2a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed619dba2520a3768d95e2a08668c29cf9997998/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/t3/Dev/SimpleList/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_26cbfc33eb2040ab3a54cde823fee66c495300a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/t3/Dev/SimpleList/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fa8e3818c2ed15887bd861d8ba5503886449d428">
+        <dex dex="/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0b40717ee58ac2ef47317357b1129884699e9359/classes.dex" />
+    </item>
+
+</items>

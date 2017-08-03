@@ -1,0 +1,7 @@
+#Wed Aug 02 10:20:55 CDT 2017
+base.0=/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed619dba2520a3768d95e2a08668c29cf9997998
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_acc73e4ee5a95a149a64c98ae3a02c1a889b532c/classes.dex
+base.1=/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_acc73e4ee5a95a149a64c98ae3a02c1a889b532c
+file.0=/home/t3/Dev/SimpleList/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed619dba2520a3768d95e2a08668c29cf9997998/classes.dex

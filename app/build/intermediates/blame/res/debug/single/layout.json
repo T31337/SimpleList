@@ -1,18 +1,34 @@
 [
     {
-        "merged": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list.xml",
-        "source": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\activity_list.xml"
+        "merged": "/home/t3/Dev/SimpleList/app/build/intermediates/res/merged/debug/layout/activity_list.xml",
+        "source": "/home/t3/Dev/SimpleList/app/src/main/res/layout/activity_list.xml"
     },
     {
-        "merged": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add.xml",
-        "source": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\add.xml"
+        "merged": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list.xml",
+        "source": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\activity_list.xml"
     },
     {
-        "merged": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add.xml",
-        "source": "C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\add.xml"
+        "merged": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add.xml",
+        "source": "/home/t3/Dev/SimpleList/C:\\Users\\Trenton\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\add.xml"
     },
     {
-        "merged": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list.xml",
-        "source": "C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\activity_list.xml"
+        "merged": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list.xml",
+        "source": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\activity_list.xml"
+    },
+    {
+        "merged": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add.xml",
+        "source": "/home/t3/Dev/SimpleList/C:\\home\\t3\\Dev\\Android\\SimpleList\\app\\src\\main\\res\\layout\\add.xml"
+    },
+    {
+        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/layout/add.xml",
+        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/layout/add.xml"
+    },
+    {
+        "merged": "/home/t3/Dev/Android/SimpleList/app/build/intermediates/res/merged/debug/layout/activity_list.xml",
+        "source": "/home/t3/Dev/Android/SimpleList/app/src/main/res/layout/activity_list.xml"
+    },
+    {
+        "merged": "/home/t3/Dev/SimpleList/app/build/intermediates/res/merged/debug/layout/add.xml",
+        "source": "/home/t3/Dev/SimpleList/app/src/main/res/layout/add.xml"
     }
 ]
