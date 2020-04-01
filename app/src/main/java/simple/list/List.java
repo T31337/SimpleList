@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class List extends ListActivity
 {
     private static final String TAG = "myDebug";
-    public static String tableName="Items",itemKey="Item",DataBase_Name="Items";
+    public static String tableName="Items",itemKey="Item",DataBase_Name="MyList";
     public static String query = String.format("select %s from %s;",itemKey,tableName);
     private ListView lv; //DO NOT MAKE STATIC, CAUSES MEMORY LEAK!
     public static ArrayAdapter<Item> saa;
@@ -44,9 +44,15 @@ public class List extends ListActivity
         {
             String item = items.get(i).name;
             boolean checked = items.get(i).isChecked;
-            if(checked)
+			//try this
+			checked=!checked;
+			items.get(i).isChecked=checked;
+			lv.setItemChecked(i,checked);
+			//instead of this...
+          /*
+			if(checked)
             {
-                lv.setItemChecked(i,false);
+               
                 items.get(i).isChecked=false;
             }
             else
@@ -54,6 +60,8 @@ public class List extends ListActivity
                 lv.setItemChecked(i,true);
                 items.get(i).isChecked=true;
             }
+			*/
+			
             Log.println(Log.DEBUG,TAG,i+": ITEM"+item+" Checked: "+!checked);
         }
     };
@@ -102,6 +110,14 @@ public class List extends ListActivity
     {
         super.onListItemClick(parent, v, position, id);
         Log.println(Log.INFO, TAG, Integer.toString(position));
+		boolean check = items.get(position).isChecked;
+		
+		//try this
+		check=!check;
+		items.get(position).isChecked=check;
+		lv.setItemChecked(position,check);
+		//instead of this...
+		/*
         if(	!items.get(position).isChecked)
         {
             lv.setItemChecked(position, true);
@@ -110,6 +126,7 @@ public class List extends ListActivity
         {
             lv.setItemChecked(position, false);
         }
+		*/
     }
 
     //List Functions
@@ -161,12 +178,13 @@ public class List extends ListActivity
     {
         //Write To File?
         Log.println(Log.DEBUG, TAG, "Write To File");
-        String sql = "delete from Items;";
+        String sql = String.format( "delete from %s;",tableName);
+		
         db.execSQL(sql);
         for(int i=0;i < items.size();i++)
         {
-            String it = items.get(i).name;
-            cv.put("Item",it);
+            String it = items.get(i).name;	
+            cv.put(itemKey,it);
             db.insert(tableName, null, cv);
         }
         Toast.makeText(this, "List Saved!", Toast.LENGTH_SHORT).show();
@@ -250,22 +268,22 @@ public class List extends ListActivity
     {
         //Reset Adapter
         saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
-        setListAdapter(saa);
+        
         //Check The Items Should Have A Check Mark Already...
         for(int i =0;i<items.size();i++)
         {
             try
             {
-                if (items.get(i).isChecked)
-                {
-                    lv.setItemChecked(i, true);
-                }
+				boolean checked = items.get(i).isChecked;
+				lv.setItemChecked(i,checked);
             }
             catch(Exception e)
             {
                 Log.println(Log.ERROR,TAG,"Error: "+e.getMessage());
             }
         }
+		
+		setListAdapter(saa);
     }
 
     private void populateMenu(Menu menu)
