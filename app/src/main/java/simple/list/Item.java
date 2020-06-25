@@ -2,7 +2,7 @@ package simple.list;
 
 public class Item
 {
-    String name;
+    public String name;
     public boolean isChecked;
 
     public Item(String name)
@@ -11,7 +11,7 @@ public class Item
     }
     public String toString()
     {
-        return name;
+        return this.name;
     }
 	public void setChecked(boolean check)
 	{

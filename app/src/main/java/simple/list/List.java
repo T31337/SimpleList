@@ -98,7 +98,7 @@ public class List extends ListActivity
 		boolean checked = items.get(position).isChecked;
 		items.get(position).setChecked(!checked);
 		lv.setItemChecked(position,items.get(position).isChecked);
-		//updateListAdapter();
+		updateListAdapter();
     }
 
     //List Functions
@@ -121,7 +121,7 @@ public class List extends ListActivity
             else
             {
                 items.clear();
-            //    res.moveToFirst();
+                res.moveToFirst();
                 String Ittem = res.getString(0);
                 items.add(new Item(Ittem));//add first item
                 while(res.moveToNext())
@@ -138,7 +138,7 @@ public class List extends ListActivity
                     }
                 }
                 res.close();
-                //updateListAdapter();
+                updateListAdapter();
             }
         }
         catch(Error e)
