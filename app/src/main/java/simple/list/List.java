@@ -27,8 +27,9 @@ import java.util.ArrayList;
 
 public class List extends ListActivity
 {
+	public boolean checked=false;
     private static final String TAG = "myDebug";
-    public static String tableName="Items",itemKey="Item",DataBase_Name="MyList";
+    public static String tableName="Items",itemKey="item",DataBase_Name="MyList";
     public static String query = String.format("select %s from %s;",itemKey,tableName);
     private ListView lv; //DO NOT MAKE STATIC, CAUSES MEMORY LEAK!
     public static ArrayAdapter<Item> saa;
@@ -42,27 +43,11 @@ public class List extends ListActivity
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
         {
-            String item = items.get(i).name;
-            boolean checked = items.get(i).isChecked;
-			//try this
-			checked=!checked;
-			items.get(i).isChecked=checked;
-			lv.setItemChecked(i,checked);
-			//instead of this...
-          /*
-			if(checked)
-            {
-               
-                items.get(i).isChecked=false;
-            }
-            else
-            {
-                lv.setItemChecked(i,true);
-                items.get(i).isChecked=true;
-            }
-			*/
-			
-            Log.println(Log.DEBUG,TAG,i+": ITEM"+item+" Checked: "+!checked);
+          
+            boolean checked = items.get(i).check();
+			items.get(i).setChecked(!checked);
+			lv.setItemChecked(i,!checked);
+            Log.println(Log.DEBUG,TAG,i+items.get(i).name+" -Checked- "+!checked);
         }
     };
 
@@ -72,13 +57,13 @@ public class List extends ListActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        helper = new DatabaseHelper(List.this.getApplicationContext());
+        helper = new DatabaseHelper(this.getApplicationContext());
         db = helper.getReadableDatabase();
-        lv = getListView();
+        lv = this.getListView();
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        updateListAdapter();
         lv.setOnItemClickListener(modelListener);
         LoadList();
+		//updateListAdapter();
 
     }//onCreate
 
@@ -110,23 +95,10 @@ public class List extends ListActivity
     {
         super.onListItemClick(parent, v, position, id);
         Log.println(Log.INFO, TAG, Integer.toString(position));
-		boolean check = items.get(position).isChecked;
-		
-		//try this
-		check=!check;
-		items.get(position).isChecked=check;
-		lv.setItemChecked(position,check);
-		//instead of this...
-		/*
-        if(	!items.get(position).isChecked)
-        {
-            lv.setItemChecked(position, true);
-        }
-        else
-        {
-            lv.setItemChecked(position, false);
-        }
-		*/
+		boolean checked = items.get(position).isChecked;
+		items.get(position).setChecked(!checked);
+		lv.setItemChecked(position,items.get(position).isChecked);
+		//updateListAdapter();
     }
 
     //List Functions
@@ -149,14 +121,14 @@ public class List extends ListActivity
             else
             {
                 items.clear();
-                res.moveToFirst();//?
-                String Ittem = res.getString(0);//+"\r\n";
+            //    res.moveToFirst();
+                String Ittem = res.getString(0);
                 items.add(new Item(Ittem));//add first item
                 while(res.moveToNext())
                 {
                     try
                     {
-                        Ittem = res.getString(0);//+"\r\n";
+                        Ittem = res.getString(0);
                         Log.println(Log.INFO, TAG, Ittem);
                         items.add(new Item(Ittem));
                     }
@@ -166,7 +138,7 @@ public class List extends ListActivity
                     }
                 }
                 res.close();
-                updateListAdapter();
+                //updateListAdapter();
             }
         }
         catch(Error e)
@@ -202,6 +174,16 @@ public class List extends ListActivity
         super.onResume();  // Always call the superclass method first
         LoadList();
     }
+
+	@Override
+	protected void onStop()
+	{
+		SaveList();
+		super.onStop();
+		finish();
+	}
+	
+	
     public boolean onOptionsItemSelected(MenuItem item)
     {
         int nItem = item.getItemId();
@@ -240,7 +222,9 @@ public class List extends ListActivity
             for(int i=0; i < size;i++)
             {
                 lv.setItemChecked(i, false);
+				items.get(i).setChecked(false);
             }
+			updateListAdapter();
             return true;
         }
         if(nItem == 6)
@@ -250,14 +234,16 @@ public class List extends ListActivity
             {
                 Item it = items.get(i);
                 Log.println(Log.INFO, "myDebug", String.format("Size: %s", itemsSize));
-
+			
                 if (it.isChecked)
                 {
                     Log.println(Log.INFO, TAG, String.format("%s | Checked: %s ", it.name, it.isChecked));
                     items.remove(i);
-                    itemsSize-=1;
+					items.trimToSize();
+                  
                 }
             }
+			
             updateListAdapter();
             return true;
         }
@@ -266,16 +252,19 @@ public class List extends ListActivity
 
     private void updateListAdapter()
     {
-        //Reset Adapter
-        saa = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, items);
-        
+		
+		//Reset Adapter
+        saa = new ArrayAdapter<Item>(this, android.R.layout.simple_list_item_multiple_choice, items);
+   
         //Check The Items Should Have A Check Mark Already...
+		
         for(int i =0;i<items.size();i++)
         {
             try
             {
 				boolean checked = items.get(i).isChecked;
 				lv.setItemChecked(i,checked);
+				items.get(i).setChecked(checked);
             }
             catch(Exception e)
             {
@@ -284,6 +273,7 @@ public class List extends ListActivity
         }
 		
 		setListAdapter(saa);
+		
     }
 
     private void populateMenu(Menu menu)
@@ -312,7 +302,7 @@ public class List extends ListActivity
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null)
         {
-            //inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,InputMethodManager.RESULT_HIDDEN);
+            inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,InputMethodManager.RESULT_HIDDEN);
             inputMethodManager.hideSoftInputFromWindow(getListView().getWindowToken(),InputMethodManager.HIDE_IMPLICIT_ONLY);
         }
     }
@@ -324,7 +314,7 @@ public class List extends ListActivity
         @SuppressLint("InflateParams")
         final View addView = inflater.inflate(R.layout.add, null);
         showKeyboard();
-        addView.setRotation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+      //  addView.setRotation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         AlertDialog add = new AlertDialog.Builder(this)
                 .setTitle("Add Item!")
                 .setView(addView)
@@ -336,7 +326,7 @@ public class List extends ListActivity
                             public void onClick(DialogInterface dialog, int whichButton)
                             {
                                 EditText txtItem = addView.findViewById(R.id.txtNewItem);
-                                showKeyboard();
+                                
                                 String sItem = txtItem.getText().toString().trim();
                                 Log.println(Log.DEBUG, TAG, "sItem='"+sItem+"'");
                                 //Add Item To List
@@ -346,7 +336,12 @@ public class List extends ListActivity
                                 }
                                 else
                                 {
+									
+									//ToDo: redundancy check
+									
+									
                                     items.add(new Item(sItem));
+									
                                     updateListAdapter();
                                     hideKeyboard();
                                 }
@@ -360,7 +355,8 @@ public class List extends ListActivity
                         //cancel - Do Nothing!
                         hideKeyboard();
                     }
-                }).show();
+                }).create();
+				add.show();
         addView.setRotation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 }

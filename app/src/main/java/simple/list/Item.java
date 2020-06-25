@@ -3,7 +3,7 @@ package simple.list;
 public class Item
 {
     String name;
-    boolean isChecked = false;
+    public boolean isChecked;
 
     public Item(String name)
     {
@@ -13,5 +13,14 @@ public class Item
     {
         return name;
     }
+	public void setChecked(boolean check)
+	{
+		
+		this.isChecked=check;
+	}
+	public boolean check()
+	{
+		return this.isChecked;
+	}
 }
 
