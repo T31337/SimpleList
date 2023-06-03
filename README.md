@@ -1,6 +1,6 @@
 # SimpleList
 Simple List Android App\
-SimpleList is a simple check list application\
+SimpleList is a simple check list application
 
 Features:\
     Auto Save List On Exit\
@@ -8,10 +8,11 @@ Features:\
     Save Option, Save Any Time\
     Remove All\
     Remove Checked\
-    Clear All Check Marks\
+    Clear All Check Marks
    
    
 May Have Some Bugs\
-Still Testing, Results May Verry\
+Still Testing, Results May Verry
+
 
 Feedback And Code Help Is Welcome And Appreciated 
